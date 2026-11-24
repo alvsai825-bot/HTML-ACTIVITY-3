@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieExpress – Online Food Delivery (HTML5 & CSS3)</title>
+  <meta name="description" content="FoodieExpress is an online food delivery website built strictly using pure HTML5 and CSS3. Explore categories, restaurants, popular dishes, and shopping cart.">
+
+  <!-- Google Fonts: Poppins & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Pure CSS3 Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+</head>
+<body>
+
+  <!-- ==============================================
+       A. NAVIGATION BAR (Pure HTML5 & CSS3)
+       ============================================== -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="logo" aria-label="FoodieExpress Home">
+        <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+        <span class="logo-text">Foodie<span class="highlight">Express</span></span>
+      </a>
+
+      <!-- Pure CSS Mobile Menu Toggle Checkbox Hack -->
+      <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle-input" aria-hidden="true">
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li>
+          <li class="nav-item"><a href="#restaurants" class="nav-link">Restaurants</a></li>
+          <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+          <li class="nav-item"><a href="#offers" class="nav-link">Offers</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Search & Cart) -->
+      <div class="nav-actions">
+        <!-- Search bar in navbar -->
+        <form action="#menu" method="get" class="nav-search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="text" placeholder="Search delicious food..." aria-label="Search food">
+          <button type="submit" class="search-submit-btn" aria-label="Search"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <!-- Shopping Cart Icon Button (opens pure CSS cart drawer) -->
+        <a href="#cart-drawer" class="cart-btn" aria-label="Open Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count-badge">3</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Label -->
+        <label for="mobile-nav-toggle" class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main id="main-content">
+
+    <!-- ==============================================
+         B. HERO SECTION
+         ============================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-bolt"></i> Fastest Food Delivery in Town
+          </div>
+          <h1 class="hero-headline">
+            Delicious Food Delivered <br>
+            <span class="highlight-text">To Your Door</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover your favourite meals from the best restaurants near you. Fresh ingredients, lightning-fast delivery, and irresistible flavors guaranteed.
+          </p>
+
+          <!-- Search Food Bar inside Hero -->
+          <form action="#menu" method="get" class="hero-search-wrapper">
+            <i class="fa-solid fa-location-dot location-icon"></i>
+            <input type="text" placeholder="What are you craving? (e.g. Biryani, Pizza, Burger...)" aria-label="Search food">
+            <button type="submit" class="hero-search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Find Food</span>
+            </button>
+          </form>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary" id="explore-food-btn">
+              <i class="fa-solid fa-bowl-food"></i> Explore Food
+            </a>
+            <a href="#restaurants" class="btn btn-secondary" id="order-now-btn">
+              <i class="fa-solid fa-bag-shopping"></i> Order Now
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Restaurants</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">30 Min</span>
+              <span class="stat-label">Fast Delivery</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">4.8 ★</span>
+              <span class="stat-label">User Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic Visual Showcase -->
+        <div class="hero-visual">
+          <div class="hero-card-main">
+            <img 
+              src="assets/images/hero.jpg" 
+              alt="Delicious fresh meal banquet" 
+              class="hero-img"
+            >
+            <div class="floating-badge badge-offer">
+              <i class="fa-solid fa-fire"></i>
+              <div>
+                <strong>Super Offer</strong>
+                <small>Flat 20% OFF</small>
+              </div>
+            </div>
+            <div class="floating-badge badge-time">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>30 mins</strong>
+                <small>Express Delivery</small>
+              </div>
+            </div>
+            <div class="floating-badge badge-rating">
+              <i class="fa-solid fa-star"></i>
+              <div>
+                <strong>4.9 Rating</strong>
+                <small>15k+ Reviews</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         C. FOOD CATEGORIES (8 Categories)
+         ============================================== -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Taste Categories</span>
+          <h2 class="section-title">Explore Food Categories</h2>
+          <p class="section-subtitle">Click any category below to immediately view mouth-watering dishes</p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- 1. Pizza -->
+          <a href="#cat-pizza-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/pizza.jpg" alt="Pizza category">
+            </div>
+            <h3 class="category-title">Pizza</h3>
+            <span class="category-count">Cheesy & Crispy</span>
+          </a>
+
+          <!-- 2. Burgers -->
+          <a href="#cat-burgers-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/burger.jpg" alt="Burgers category">
+            </div>
+            <h3 class="category-title">Burgers</h3>
+            <span class="category-count">Juicy & Loaded</span>
+          </a>
+
+          <!-- 3. Biryani -->
+          <a href="#cat-biryani-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/biryani.jpg" alt="Biryani category">
+            </div>
+            <h3 class="category-title">Biryani</h3>
+            <span class="category-count">Royal & Aromatic</span>
+          </a>
+
+          <!-- 4. Chinese -->
+          <a href="#cat-chinese-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/chinese.jpg" alt="Chinese category">
+            </div>
+            <h3 class="category-title">Chinese</h3>
+            <span class="category-count">Wok & Sizzling</span>
+          </a>
+
+          <!-- 5. Desserts -->
+          <a href="#cat-desserts-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/dessert.jpg" alt="Desserts category">
+            </div>
+            <h3 class="category-title">Desserts</h3>
+            <span class="category-count">Sweet Delights</span>
+          </a>
+
+          <!-- 6. South Indian -->
+          <a href="#cat-south-indian-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/dosa.jpg" alt="South Indian category">
+            </div>
+            <h3 class="category-title">South Indian</h3>
+            <span class="category-count">Crispy & Traditional</span>
+          </a>
+
+          <!-- 7. Healthy Food -->
+          <a href="#cat-healthy-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/healthy.jpg" alt="Healthy Food category">
+            </div>
+            <h3 class="category-title">Healthy Food</h3>
+            <span class="category-count">Fresh & Nutritious</span>
+          </a>
+
+          <!-- 8. Beverages -->
+          <a href="#cat-beverages-tab" class="category-card">
+            <div class="category-img-box">
+              <img src="assets/images/beverages.jpg" alt="Beverages category">
+            </div>
+            <h3 class="category-title">Beverages</h3>
+            <span class="category-count">Chilled & Refreshing</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         D. RESTAURANTS SECTION
+         ============================================== -->
+    <section class="section restaurants-section" id="restaurants">
+      <div class="container">
+        <!-- Pure CSS Restaurant Filtering using Radio Buttons -->
+        <input type="radio" name="rest-filter" id="rest-all" class="filter-radio" checked>
+        <input type="radio" name="rest-filter" id="rest-top-rated" class="filter-radio">
+        <input type="radio" name="rest-filter" id="rest-fast" class="filter-radio">
+
+        <div class="section-header">
+          <div>
+            <span class="section-tag">Featured Partners</span>
+            <h2 class="section-title">Top Rated Restaurants</h2>
+            <p class="section-subtitle">Order from the finest kitchens near you with certified hygienic preparation</p>
+          </div>
+          <!-- Filter tab labels -->
+          <div class="restaurant-filter-tabs">
+            <label for="rest-all" class="pill-btn label-rest-all">All Restaurants</label>
+            <label for="rest-top-rated" class="pill-btn label-rest-top">Top Rated (4.7+)</label>
+            <label for="rest-fast" class="pill-btn label-rest-fast">Fast Delivery (&lt;25m)</label>
+          </div>
+        </div>
+
+        <div class="restaurants-grid">
+          <!-- 1. Spice Garden -->
+          <article class="restaurant-card top-rated">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-1.jpg" alt="Spice Garden Restaurant">
+              <span class="badge-discount">Flat 20% OFF</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">Spice Garden</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+              </div>
+              <p class="restaurant-category">North Indian • Biryani • Mughlai</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 25-30 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹150</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-truck-fast"></i> Free Delivery Available</span>
+                <a href="#cat-biryani-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Pizza Palace -->
+          <article class="restaurant-card top-rated fast-delivery">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-2.jpg" alt="Pizza Palace Restaurant">
+              <span class="badge-discount">BOGO Offer</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">Pizza Palace</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+              </div>
+              <p class="restaurant-category">Pizzas • Italian • Garlic Breads</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 20-25 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹200</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-fire"></i> Bestseller</span>
+                <a href="#cat-pizza-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Burger House -->
+          <article class="restaurant-card fast-delivery">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-3.jpg" alt="Burger House Restaurant">
+              <span class="badge-discount">15% OFF</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">Burger House</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.6</span>
+              </div>
+              <p class="restaurant-category">Burgers • French Fries • Shakes</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 15-20 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹100</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-bolt"></i> Super Fast</span>
+                <a href="#cat-burgers-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. South Indian Kitchen -->
+          <article class="restaurant-card top-rated fast-delivery">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-4.jpg" alt="South Indian Kitchen Restaurant">
+              <span class="badge-discount">Pure Veg</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">South Indian Kitchen</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+              </div>
+              <p class="restaurant-category">South Indian • Dosa • Filter Coffee</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 20-30 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹99</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-award"></i> Most Loved</span>
+                <a href="#cat-south-indian-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Chinese Wok -->
+          <article class="restaurant-card">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-5.jpg" alt="Chinese Wok Restaurant">
+              <span class="badge-discount">Combo Deals</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">Chinese Wok</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.5</span>
+              </div>
+              <p class="restaurant-category">Chinese • Fried Rice • Manchurian</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 25-35 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹120</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-utensils"></i> Authentic Wok</span>
+                <a href="#cat-chinese-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Sweet Treats -->
+          <article class="restaurant-card top-rated fast-delivery">
+            <div class="restaurant-img-box">
+              <img src="assets/images/restaurant-6.jpg" alt="Sweet Treats Bakery">
+              <span class="badge-discount">Fresh Bakes</span>
+              <label class="fav-label">
+                <input type="checkbox" class="fav-checkbox">
+                <span class="badge-fav"><i class="fa-solid fa-heart"></i></span>
+              </label>
+            </div>
+            <div class="restaurant-body">
+              <div class="restaurant-header">
+                <h3 class="restaurant-name">Sweet Treats</h3>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+              </div>
+              <p class="restaurant-category">Desserts • Cakes • Pastries • Shakes</p>
+              <div class="restaurant-meta">
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> 15-25 mins</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-item"><i class="fa-solid fa-receipt"></i> Min. ₹80</span>
+              </div>
+              <div class="restaurant-footer">
+                <span class="tag-promoted"><i class="fa-solid fa-cake-candles"></i> Fresh Daily</span>
+                <a href="#cat-desserts-tab" class="btn-link">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         E. POPULAR DISHES (MENU SECTION - Pure CSS3 Filtering)
+         ============================================== -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <!-- Radio Filter Inputs for Pure CSS Category Switching -->
+        <input type="radio" name="dish-filter" id="cat-all-tab" class="filter-radio" checked>
+        <input type="radio" name="dish-filter" id="cat-biryani-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-pizza-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-burgers-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-north-indian-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-chinese-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-south-indian-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-desserts-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-healthy-tab" class="filter-radio">
+        <input type="radio" name="dish-filter" id="cat-beverages-tab" class="filter-radio">
+
+        <!-- Checkbox Filter Input for Pure Veg Toggle -->
+        <input type="checkbox" id="veg-only-toggle" class="filter-checkbox">
+
+        <div class="section-header text-center">
+          <span class="section-tag">Chef's Recommendations</span>
+          <h2 class="section-title">Popular Dishes</h2>
+          <p class="section-subtitle">Savor our most requested dishes prepared freshly upon order</p>
+        </div>
+
+        <!-- Menu Filter Controls (CSS Labels) -->
+        <div class="menu-controls">
+          <div class="menu-filter-pills">
+            <label for="cat-all-tab" class="menu-pill pill-all">All Dishes</label>
+            <label for="cat-biryani-tab" class="menu-pill pill-biryani">Biryani</label>
+            <label for="cat-pizza-tab" class="menu-pill pill-pizza">Pizza</label>
+            <label for="cat-burgers-tab" class="menu-pill pill-burgers">Burgers</label>
+            <label for="cat-north-indian-tab" class="menu-pill pill-north-indian">North Indian</label>
+            <label for="cat-chinese-tab" class="menu-pill pill-chinese">Chinese</label>
+            <label for="cat-south-indian-tab" class="menu-pill pill-south-indian">South Indian</label>
+            <label for="cat-desserts-tab" class="menu-pill pill-desserts">Desserts</label>
+            <label for="cat-healthy-tab" class="menu-pill pill-healthy">Healthy Food</label>
+            <label for="cat-beverages-tab" class="menu-pill pill-beverages">Beverages</label>
+          </div>
+
+          <!-- Secondary Filters (Pure Veg Toggle) -->
+          <div class="menu-sub-controls">
+            <div class="menu-hint-text">
+              <i class="fa-solid fa-utensils"></i> Showing fresh delicacies ready for delivery
+            </div>
+            <div class="filter-toggles">
+              <label for="veg-only-toggle" class="toggle-pill">
+                <span class="veg-badge-icon"><i class="fa-solid fa-leaf"></i></span>
+                <span>Pure Veg Only</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- All 8 Dishes + Companion Items Rendered in Pure HTML5 -->
+        <div class="dishes-grid">
+
+          <!-- 1. Chicken Biryani – ₹199 -->
+          <article class="dish-card item-biryani non-veg">
+            <div class="dish-img-box">
+              <span class="veg-tag non-veg" title="Non-Vegetarian"></span>
+              <img src="assets/images/biryani.jpg" alt="Chicken Biryani">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Biryani</span>
+              <h3 class="dish-name">Chicken Biryani</h3>
+              <p class="dish-desc">Royal basmati rice infused with tender marinated chicken, saffron, aromatic whole spices, and caramelized onions.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>199</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Margherita Pizza – ₹249 -->
+          <article class="dish-card item-pizza veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/pizza.jpg" alt="Margherita Pizza">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Pizza</span>
+              <h3 class="dish-name">Margherita Pizza</h3>
+              <p class="dish-desc">Classic Italian hand-stretched crust with rich tomato sauce, fresh buffalo mozzarella, and fragrant garden basil.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>249</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Classic Burger – ₹149 -->
+          <article class="dish-card item-burgers non-veg">
+            <div class="dish-img-box">
+              <span class="veg-tag non-veg" title="Non-Vegetarian"></span>
+              <img src="assets/images/burger.jpg" alt="Classic Burger">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.6</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Burgers</span>
+              <h3 class="dish-name">Classic Burger</h3>
+              <p class="dish-desc">Juicy grilled patty layered with melted cheddar cheese, crisp lettuce, fresh tomato slices, and secret house sauce.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>149</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Paneer Butter Masala – ₹179 -->
+          <article class="dish-card item-north-indian veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/paneer.jpg" alt="Paneer Butter Masala">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">North Indian</span>
+              <h3 class="dish-name">Paneer Butter Masala</h3>
+              <p class="dish-desc">Soft cottage cheese cubes simmered in a velvety buttery tomato & cashew gravy with aromatic kasuri methi.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>179</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Veg Fried Rice – ₹129 -->
+          <article class="dish-card item-chinese veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/fried-rice.jpg" alt="Veg Fried Rice">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.5</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Chinese</span>
+              <h3 class="dish-name">Veg Fried Rice</h3>
+              <p class="dish-desc">Aromatic long-grain rice wok-tossed on high flame with crisp seasonal veggies, scallions, and light seasoning.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>129</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Chocolate Cake – ₹99 -->
+          <article class="dish-card item-desserts veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/dessert.jpg" alt="Chocolate Cake">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Desserts</span>
+              <h3 class="dish-name">Chocolate Cake</h3>
+              <p class="dish-desc">Decadent moist Belgian chocolate sponge layered with rich dark chocolate fudge ganache and chocolate chips.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>99</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Masala Dosa – ₹89 -->
+          <article class="dish-card item-south-indian veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/dosa.jpg" alt="Masala Dosa">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">South Indian</span>
+              <h3 class="dish-name">Masala Dosa</h3>
+              <p class="dish-desc">Golden crispy fermented rice crepe stuffed with spiced potato masala, served with piping hot sambar & fresh chutney.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>89</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. French Fries – ₹79 -->
+          <article class="dish-card item-beverages veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/fries.jpg" alt="French Fries">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.6</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Beverages & Sides</span>
+              <h3 class="dish-name">French Fries</h3>
+              <p class="dish-desc">Golden crisp potato batons deep-fried to perfection and seasoned with sea salt and peri-peri herb dust.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>79</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bonus: Paneer Tikka Pizza – ₹279 -->
+          <article class="dish-card item-pizza veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/pizza.jpg" alt="Paneer Tikka Pizza">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Pizza</span>
+              <h3 class="dish-name">Paneer Tikka Pizza</h3>
+              <p class="dish-desc">Crispy crust loaded with tandoori-marinated paneer chunks, crisp bell peppers, onions, and spicy makhani sauce.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>279</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bonus: Crispy Chicken Burger – ₹169 -->
+          <article class="dish-card item-burgers non-veg">
+            <div class="dish-img-box">
+              <span class="veg-tag non-veg" title="Non-Vegetarian"></span>
+              <img src="assets/images/burger.jpg" alt="Crispy Chicken Burger">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Burgers</span>
+              <h3 class="dish-name">Crispy Chicken Burger</h3>
+              <p class="dish-desc">Crunchy fried chicken breast patty tossed in peri-peri spices with fresh coleslaw and garlic mayo.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>169</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bonus: Garden Fresh Salad – ₹119 -->
+          <article class="dish-card item-healthy veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/healthy.jpg" alt="Garden Fresh Salad">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.6</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Healthy Food</span>
+              <h3 class="dish-name">Garden Fresh Salad</h3>
+              <p class="dish-desc">Crunchy organic greens, sweet corn, cherry tomatoes, cucumbers, and pitted olives tossed in extra virgin olive oil.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>119</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bonus: Refreshing Beverages – ₹69 -->
+          <article class="dish-card item-beverages veg">
+            <div class="dish-img-box">
+              <span class="veg-tag veg" title="Pure Vegetarian"></span>
+              <img src="assets/images/beverages.jpg" alt="Mango Lassi & Refreshers">
+              <span class="dish-rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <div class="dish-body">
+              <span class="dish-category-label">Beverages</span>
+              <h3 class="dish-name">Mango Lassi Refresher</h3>
+              <p class="dish-desc">Thick, refreshing creamy yogurt smoothie blended with sweet Alphonso mango pulp and fragrant green cardamom.</p>
+              <div class="dish-footer">
+                <div class="dish-price"><span class="currency">₹</span>69</div>
+                <a href="#cart-drawer" class="btn-add-cart"><i class="fa-solid fa-plus"></i> Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         F. SPECIAL OFFERS (3 Promotional Banners)
+         ============================================== -->
+    <section class="section offers-section" id="offers">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Limited Time</span>
+          <h2 class="section-title">Exclusive Deals & Offers</h2>
+          <p class="section-subtitle">Save more on every meal with these special discount coupon vouchers</p>
+        </div>
+
+        <div class="offers-grid">
+          <!-- Offer 1: 20% OFF on your first order -->
+          <div class="offer-card offer-card-orange">
+            <div class="offer-pattern"></div>
+            <div class="offer-badge-ribbon">20% OFF</div>
+            <div class="offer-content">
+              <span class="offer-tagline">Welcome Gift</span>
+              <h3 class="offer-title">20% OFF on your first order</h3>
+              <p class="offer-desc">Use coupon code at checkout to enjoy a flat 20% discount on all orders over ₹199.</p>
+              <div class="coupon-box">
+                <span class="coupon-code">FIRST20</span>
+                <span class="coupon-note"><i class="fa-solid fa-tag"></i> Valid Today</span>
+              </div>
+              <a href="#cart-drawer" class="btn-claim-offer">Claim Offer & Order</a>
+            </div>
+          </div>
+
+          <!-- Offer 2: Buy 1 Get 1 Free on selected pizzas -->
+          <div class="offer-card offer-card-dark">
+            <div class="offer-pattern"></div>
+            <div class="offer-badge-ribbon">BOGO DEAL</div>
+            <div class="offer-content">
+              <span class="offer-tagline">Pizza Fiesta</span>
+              <h3 class="offer-title">Buy 1 Get 1 Free on selected pizzas</h3>
+              <p class="offer-desc">Order any medium or large pizza and get another delicious pizza on the house!</p>
+              <div class="coupon-box">
+                <span class="coupon-code">BOGOPIZZA</span>
+                <span class="coupon-note"><i class="fa-solid fa-pizza-slice"></i> Pizza Only</span>
+              </div>
+              <a href="#cart-drawer" class="btn-claim-offer">Claim Offer & Order</a>
+            </div>
+          </div>
+
+          <!-- Offer 3: Free delivery on orders above ₹499 -->
+          <div class="offer-card offer-card-green">
+            <div class="offer-pattern"></div>
+            <div class="offer-badge-ribbon">FREE DEL</div>
+            <div class="offer-content">
+              <span class="offer-tagline">No Delivery Fee</span>
+              <h3 class="offer-title">Free delivery on orders above ₹499</h3>
+              <p class="offer-desc">Zero delivery charges automatically unlocked at checkout for orders above ₹499.</p>
+              <div class="coupon-box">
+                <span class="coupon-code">FREEDEL</span>
+                <span class="coupon-note"><i class="fa-solid fa-truck-fast"></i> Auto Applied</span>
+              </div>
+              <a href="#cart-drawer" class="btn-claim-offer">Claim Offer & Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         H. CONTACT SECTION
+         ============================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact Customer Support</h2>
+          <p class="section-subtitle">Have questions or feedback? We'd love to hear from you. Our support team is here 24/7.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-cards">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Customer Support</h4>
+                <p>+91 98765 43210</p>
+                <small>Toll Free • Mon-Sun (24/7)</small>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4>Email Inquiries</h4>
+                <p>support@foodieexpress.com</p>
+                <small>Quick response within 15 mins</small>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4>Headquarters</h4>
+                <p>100 Feet Road, Indiranagar</p>
+                <small>Bengaluru, Karnataka 560038, India</small>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h4>Kitchen Hours</h4>
+                <p>8:00 AM – 2:00 AM</p>
+                <small>365 Days a Year</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form (Pure HTML5) -->
+          <div class="contact-form-card" id="contact-form-box">
+            <h3 class="form-title">Send Us a Message</h3>
+            <p class="form-desc">Fill out the quick form below and our customer care team will respond promptly.</p>
+            <form action="#contact-success-msg" method="get">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Full Name *</label>
+                  <input type="text" id="contact-name" name="name" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Email Address *</label>
+                  <input type="email" id="contact-email" name="email" placeholder="e.g. rahul@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="e.g. Feedback about delivery / Menu request">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" rows="4" placeholder="How can we help you today?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+
+              <div class="contact-success-alert" id="contact-success-msg">
+                <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been received. Our team will contact you shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       H. FOOTER
+       ============================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <a href="#home" class="footer-logo">
+            <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+            <span>Foodie<span class="highlight">Express</span></span>
+          </a>
+          <p class="footer-about">
+            FoodieExpress is your premier destination for lightning-fast online food delivery. We connect food lovers with the finest dining kitchens and street favorites across town.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Food Categories</a></li>
+            <li><a href="#restaurants">Top Restaurants</a></li>
+            <li><a href="#menu">Popular Menu</a></li>
+            <li><a href="#offers">Special Offers</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Top Categories -->
+        <div class="footer-col">
+          <h4 class="footer-title">Top Cuisines</h4>
+          <ul class="footer-links">
+            <li><a href="#cat-biryani-tab">Royal Biryani</a></li>
+            <li><a href="#cat-pizza-tab">Italian Pizza</a></li>
+            <li><a href="#cat-burgers-tab">Gourmet Burgers</a></li>
+            <li><a href="#cat-south-indian-tab">Crispy Dosa</a></li>
+            <li><a href="#cat-chinese-tab">Wok Chinese</a></li>
+            <li><a href="#cat-desserts-tab">Sweet Desserts</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-col newsletter-col">
+          <h4 class="footer-title">Stay Hungry, Stay Updated!</h4>
+          <p>Subscribe to receive exclusive weekend discount codes and chef special alerts.</p>
+          <form action="#newsletter-success-msg" method="get" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+          <div class="newsletter-success-text" id="newsletter-success-msg">
+            <i class="fa-solid fa-check"></i> Subscribed successfully! Welcome to FoodieExpress.
+          </div>
+          <div class="safety-badge">
+            <i class="fa-solid fa-shield-heart"></i> 100% Secure & Fresh Guarantee
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>FoodieExpress</strong>. All Rights Reserved. Built with ❤️ for Web Development College Assignment (Pure HTML5 & CSS3).</p>
+        <div class="footer-bottom-links">
+          <a href="#home">Privacy Policy</a>
+          <span>•</span>
+          <a href="#home">Terms of Service</a>
+          <span>•</span>
+          <a href="#home">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================
+       G. SHOPPING CART DRAWER (Pure CSS3 :target)
+       ============================================== -->
+  <aside class="cart-drawer-wrapper" id="cart-drawer">
+    <a href="#" class="cart-backdrop" aria-label="Close cart"></a>
+    <div class="cart-drawer-panel">
+      <!-- Cart Header -->
+      <div class="cart-drawer-header">
+        <div class="cart-title-wrapper">
+          <i class="fa-solid fa-bag-shopping cart-header-icon"></i>
+          <h3>Your Food Cart (3 Items)</h3>
+        </div>
+        <a href="#" class="cart-close-btn" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></a>
+      </div>
+
+      <!-- Free Delivery Progress Bar (unlocked) -->
+      <div class="free-delivery-tracker">
+        <div class="tracker-text">
+          <span class="text-success"><i class="fa-solid fa-circle-check"></i> Congratulations! You've unlocked <strong>FREE Delivery!</strong></span>
+        </div>
+        <div class="tracker-bar">
+          <div class="tracker-fill unlocked" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items Scroll Area -->
+      <div class="cart-items-container">
+        <!-- Item 1: Margherita Pizza -->
+        <div class="cart-item-row">
+          <div class="cart-item-thumb">
+            <img src="assets/images/pizza.jpg" alt="Margherita Pizza">
+          </div>
+          <div class="cart-item-details">
+            <h4 class="cart-item-name">Margherita Pizza</h4>
+            <div class="cart-item-unit-price">₹249 each</div>
+            <div class="cart-item-bottom">
+              <div class="cart-qty-spinner">
+                <span class="qty-label">Qty:</span>
+                <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Pizza quantity">
+              </div>
+              <div class="cart-item-price">₹249</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Chicken Biryani -->
+        <div class="cart-item-row">
+          <div class="cart-item-thumb">
+            <img src="assets/images/biryani.jpg" alt="Chicken Biryani">
+          </div>
+          <div class="cart-item-details">
+            <h4 class="cart-item-name">Chicken Biryani</h4>
+            <div class="cart-item-unit-price">₹199 each</div>
+            <div class="cart-item-bottom">
+              <div class="cart-qty-spinner">
+                <span class="qty-label">Qty:</span>
+                <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Biryani quantity">
+              </div>
+              <div class="cart-item-price">₹199</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: French Fries -->
+        <div class="cart-item-row">
+          <div class="cart-item-thumb">
+            <img src="assets/images/fries.jpg" alt="French Fries">
+          </div>
+          <div class="cart-item-details">
+            <h4 class="cart-item-name">French Fries</h4>
+            <div class="cart-item-unit-price">₹79 each</div>
+            <div class="cart-item-bottom">
+              <div class="cart-qty-spinner">
+                <span class="qty-label">Qty:</span>
+                <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Fries quantity">
+              </div>
+              <div class="cart-item-price">₹79</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Bill Breakdown & Actions -->
+      <div class="cart-drawer-footer">
+        <!-- Coupon input -->
+        <div class="cart-coupon-section">
+          <div class="coupon-input-group">
+            <input type="text" value="FIRST20" placeholder="Enter coupon code" aria-label="Coupon code">
+            <button type="button" class="btn-coupon-applied">Applied</button>
+          </div>
+          <div class="applied-coupon-tag">
+            <span><i class="fa-solid fa-tag"></i> 20% discount coupon <strong>FIRST20</strong> active!</span>
+          </div>
+        </div>
+
+        <!-- Bill Breakdown -->
+        <div class="bill-breakdown">
+          <div class="bill-row">
+            <span>Item Subtotal</span>
+            <span>₹527</span>
+          </div>
+          <div class="bill-row">
+            <span class="text-success"><i class="fa-solid fa-tag"></i> Coupon Discount (20%)</span>
+            <span class="text-success">-₹105</span>
+          </div>
+          <div class="bill-row">
+            <span>Delivery Partner Fee</span>
+            <span class="text-success"><strong>FREE</strong> (Above ₹499)</span>
+          </div>
+          <div class="bill-row">
+            <span>Govt Taxes & Restaurant Packaging</span>
+            <span>₹20</span>
+          </div>
+          <div class="bill-divider"></div>
+          <div class="bill-row bill-total-row">
+            <div>
+              <strong>To Pay</strong>
+              <small class="bill-tax-label">Inclusive of all taxes</small>
+            </div>
+            <strong class="grand-total-price">₹442</strong>
+          </div>
+        </div>
+
+        <!-- Proceed to Checkout Button -->
+        <a href="#checkout-modal" class="btn btn-primary btn-block checkout-btn">
+          <span>Proceed to Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <p class="demo-assignment-note">
+          <i class="fa-solid fa-circle-info"></i> Demo order simulation for college web project (Pure HTML5 & CSS3).
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==============================================
+       CHECKOUT MODAL (Pure CSS3 :target)
+       ============================================== -->
+  <div class="modal-wrapper" id="checkout-modal">
+    <a href="#" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-card checkout-modal">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+          <h3>Delivery & Order Details</h3>
+        </div>
+        <a href="#" class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></a>
+      </div>
+
+      <div class="modal-body">
+        <!-- Order Snapshot Bar -->
+        <div class="checkout-summary-bar">
+          <div>
+            <span class="summary-label">Order Total:</span>
+            <strong class="summary-amount">₹442</strong>
+          </div>
+          <div>
+            <span class="summary-label">Total Items:</span>
+            <span class="summary-items-count">3 items</span>
+          </div>
+        </div>
+
+        <!-- Delivery Address Form -->
+        <form action="#order-success-modal" method="get">
+          <h4 class="form-section-heading"><i class="fa-solid fa-location-dot"></i> Delivery Address</h4>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="order-name">Full Name *</label>
+              <input type="text" id="order-name" required value="Aditi Roy">
+            </div>
+            <div class="form-group">
+              <label for="order-phone">Phone Number *</label>
+              <input type="tel" id="order-phone" required value="9876543210">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-address">Delivery Address (Flat / House / Street) *</label>
+            <input type="text" id="order-address" required value="Flat 302, Sunrise Apartments, 5th Cross Road">
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="order-city">City & Pincode *</label>
+              <input type="text" id="order-city" required value="Bengaluru - 560001">
+            </div>
+            <div class="form-group">
+              <label for="order-landmark">Nearby Landmark</label>
+              <input type="text" id="order-landmark" value="Near Central Park Metro">
+            </div>
+          </div>
+
+          <!-- Payment Method Options -->
+          <h4 class="form-section-heading"><i class="fa-solid fa-credit-card"></i> Demo Payment Method</h4>
+          <div class="payment-options">
+            <label class="payment-card">
+              <input type="radio" name="payment_method" value="COD" checked>
+              <div class="payment-content">
+                <span class="payment-icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                <div>
+                  <strong>Cash on Delivery (COD)</strong>
+                  <small>Pay cash upon receiving food at your door</small>
+                </div>
+              </div>
+            </label>
+
+            <label class="payment-card">
+              <input type="radio" name="payment_method" value="UPI">
+              <div class="payment-content">
+                <span class="payment-icon"><i class="fa-brands fa-google-pay"></i></span>
+                <div>
+                  <strong>UPI / QR Scan (Demo)</strong>
+                  <small>GPay, PhonePe, Paytm simulation</small>
+                </div>
+              </div>
+            </label>
+
+            <label class="payment-card">
+              <input type="radio" name="payment_method" value="Card">
+              <div class="payment-content">
+                <span class="payment-icon"><i class="fa-regular fa-credit-card"></i></span>
+                <div>
+                  <strong>Debit / Credit Card (Demo)</strong>
+                  <small>Instant simulation confirmation</small>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <!-- Submit Order Button -->
+          <div class="checkout-actions">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-check"></i> Confirm Demo Order (₹442)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       ORDER SUCCESS MODAL (Pure CSS3 :target)
+       ============================================== -->
+  <div class="modal-wrapper" id="order-success-modal">
+    <a href="#" class="modal-backdrop-close" aria-label="Close modal"></a>
+    <div class="modal-card success-modal">
+      <div class="success-header text-center">
+        <div class="success-animated-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 class="success-title">Order Placed Successfully!</h3>
+        <p class="success-desc">Thank you for your order! Your delicious meals are being prepared with love.</p>
+        <div class="order-id-badge">
+          Order ID: <strong>#FE-94821</strong>
+        </div>
+      </div>
+
+      <div class="success-body">
+        <!-- Live Delivery Progress Tracker -->
+        <div class="order-tracker">
+          <div class="tracker-step completed">
+            <div class="step-dot"><i class="fa-solid fa-check"></i></div>
+            <div class="step-info">
+              <strong>Order Confirmed</strong>
+              <small>Just now</small>
+            </div>
+          </div>
+          <div class="tracker-step in-progress">
+            <div class="step-dot"><i class="fa-solid fa-fire-burner"></i></div>
+            <div class="step-info">
+              <strong>Food Being Prepared</strong>
+              <small>Kitchen cooking your fresh meal</small>
+            </div>
+          </div>
+          <div class="tracker-step">
+            <div class="step-dot"><i class="fa-solid fa-motorcycle"></i></div>
+            <div class="step-info">
+              <strong>Out for Delivery</strong>
+              <small>Rider will pick up shortly</small>
+            </div>
+          </div>
+          <div class="tracker-step">
+            <div class="step-dot"><i class="fa-solid fa-house"></i></div>
+            <div class="step-info">
+              <strong>Arrived at Doorstep</strong>
+              <small>Estimated in 25-30 mins</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary Details -->
+        <div class="success-order-details">
+          <div class="detail-row">
+            <span>Delivering To:</span>
+            <strong>Aditi Roy</strong>
+          </div>
+          <div class="detail-row">
+            <span>Address:</span>
+            <span>Flat 302, Sunrise Apartments, Bengaluru</span>
+          </div>
+          <div class="detail-row">
+            <span>Payment Mode:</span>
+            <span class="badge-payment-mode">Cash on Delivery</span>
+          </div>
+          <div class="detail-row total-row">
+            <span>Total Amount:</span>
+            <strong class="text-orange">₹442 (Paid)</strong>
+          </div>
+        </div>
+
+        <div class="success-actions">
+          <a href="#menu" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-bowl-food"></i> Back to Menu & Explore More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
